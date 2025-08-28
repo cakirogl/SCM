@@ -7,8 +7,14 @@ from xgboost.sklearn import XGBRegressor
 from catboost import CatBoostRegressor
 
 url = "https://raw.githubusercontent.com/cakirogl/SCM/refs/heads/main/SCM_Cl28_only_Coulomb.csv"
-model_selector = st.selectbox('**Predictive model**', ["XGBoost", "CatBoost"])
-quantile_selector = st.selectbox('**Select quantile**', ["80%", "90%", "95%"])
+#model_selector = st.selectbox('**Predictive model**', ["XGBoost", "CatBoost"])
+#quantile_selector = st.selectbox('**Select quantile**', ["80%", "90%", "95%"])
+# Side-by-side selectors
+sel1, sel2 = st.columns(2)
+with sel1:
+    model_selector = st.selectbox('**Predictive model**', ["XGBoost", "CatBoost"], key="model_selector")
+with sel2:
+    quantile_selector = st.selectbox('**Select quantile**', ["80%", "90%", "95%"], key="quantile_selector")
 df = pd.read_csv(url);
 x, y = df.iloc[:, :-1], df.iloc[:, -1]
 scaler = MinMaxScaler();
