@@ -33,14 +33,14 @@ if model_selector=="XGBoost":
     #model=XGBRegressor(random_state=0)
     #model.fit(x, y)
     q80 = 369.638; q90 = 587.642;  q95 = 928.972;
-    xgb_url = "https://github.com/cakirogl/SCM/blob/main/XGBmodel.pkl"
+    xgb_url = "https://github.com/cakirogl/SCM/refs/heads/main/XGBmodel.pkl"
     response = requests.get(xgb_url)
     model = pickle.loads(response.content)
 if model_selector=="CatBoost":
     q80 = 249.937; q90 = 405.552;  q95 = 1038.826;
     #model=CatBoostRegressor(random_state=0, verbose=0)
     #model.fit(x,y)
-    cb_url = "https://github.com/cakirogl/SCM/blob/main/CBmodel.pkl"
+    cb_url = "https://github.com/cakirogl/SCM/refs/heads/main/CBmodel.pkl"
     response = requests.get(cb_url)
     model = pickle.loads(response.content)
 
