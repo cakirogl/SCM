@@ -14,7 +14,7 @@ sel1, sel2 = st.columns(2)
 with sel1:
     model_selector = st.selectbox('**Predictive model**', ["XGBoost", "CatBoost"], key="model_selector")
 with sel2:
-    quantile_selector = st.selectbox('**Select quantile**', ["80%", "90%", "95%"], key="quantile_selector")
+    quantile_selector = st.selectbox('**Quantile**', ["80%", "90%", "95%"], key="quantile_selector")
 df = pd.read_csv(url);
 x, y = df.iloc[:, :-1], df.iloc[:, -1]
 scaler = MinMaxScaler();
