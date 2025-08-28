@@ -19,11 +19,14 @@ with ic1:
     cement = st.number_input("**Cement [kg/m$^3$]:**",min_value=75.0,max_value=715.0,step=5.0,value=315.77)
     water = st.number_input("**Water [kg/m$^3$]:**",min_value=60.0,max_value=200.0,step = 5.0,value=171.08)
     c_agg = st.number_input("**Coarse agg. [kg/m$^3$]:**", min_value=500.0, max_value=1400.0, step=20.0, value=830.87)
-    f_agg = st.number_input("**Fine agg. [kg/m$^3$]:**", min_value=400.0, max_value=1200.0, step=20.0, value=846.81)
-    FA = st.number_input("**Fly ash [kg/m$^3$]:**", min_value=0.0, max_value=450.0, step=20.0, value=96.19)
+    
 with ic2:
+    f_agg = st.number_input("**Fine agg. [kg/m$^3$]:**", min_value=400.0, max_value=1200.0, step=20.0, value=846.81)
     SF = st.number_input("**Silica fume [kg/m$^3$]:**", min_value=0.0, max_value=150.0, step=20.0, value=23.04)
     GGBFS=st.number_input("**Ground granulated blast furnace slag [kg/m$^3$]:**", min_value=0.0, max_value=400.0, step=20.0, value=59.62)
+    
+with ic3:
+    FA = st.number_input("**Fly ash [kg/m$^3$]:**", min_value=0.0, max_value=450.0, step=20.0, value=96.19)
     SP = st.number_input("**Superplasticizer [kg/m$^3$]**", min_value=0.0, max_value=12.0, step=1.0, value=4.67)
 
 new_sample=np.array([[cement, water, c_agg, f_agg, FA, SF, GGBFS, SP]],dtype=object)
