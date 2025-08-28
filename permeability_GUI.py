@@ -48,7 +48,7 @@ if model_selector=="CatBoost":
     model = pickle.loads(response.content)
 
 
-with ic2:
+with ic3:
     #st.write(f":blue[**Compressive strength = **{model_c.predict(new_sample)[0]:.3f}** MPa**]\n")
     point_pred = model.predict(new_sample)[0];
     if quantile_selector == "80%":
